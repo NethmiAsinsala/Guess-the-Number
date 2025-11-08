@@ -1,23 +1,29 @@
 let number = Math.floor(Math.random() * 11);
 let attempts = 0;
 createBubbles("normal");
+
+let message = document.getElementById("lblMessage");
+message.innerHTML = `<p>Guess a number between 0-10. You have 3 attempts!</p>`;
+
 function guess() {
     let value = parseInt(document.getElementById("txtNumber").value);
-    let message = document.getElementById("lblMessage");
+
 
     attempts++;
 
-    if (value > number) {
+    if (value > number && value <= 10) {
         message.innerHTML = `<p>Number is greater!...</p>`;
 
-    } else if (value < number) {
+    } else if (value < number && value >= 0) {
         message.innerHTML = `<p>Number is too low!...</p>`;
 
-    } else {
+    } else if (value === number) {
         message.innerHTML = `<p>🎉 Congratulations! You guessed the number!</p>`;
         createBubbles("win");
         resetGame();
         return;
+    } else {
+        message.innerHTML = `<p>❌ Please enter a valid number between 0-10!</p>`;
     }
 
     if (attempts >= 3) {
@@ -34,17 +40,17 @@ function resetGame() {
         number = Math.floor(Math.random() * 11);
         document.getElementById("txtNumber").value = "";
         document.getElementById("lblMessage").innerHTML = `<p>🔄 Game reset! Try again.</p>`;
-    }, 1500); 
+    }, 3600);
 }
 function createBubbles(type) {
     const bubbleArea = document.getElementById("bubbleArea");
-    bubbleArea.innerHTML = ""; // clear previous bubbles
-    
+    bubbleArea.innerHTML = "";
+
     let emojis = [];
 
     if (type === "normal") emojis = ["⚪", "🔵", "🟣", "🔮", "💠"];
     if (type === "win") emojis = ["🎉", "😀", "🎈", "🥳", "🏆"];
-    if (type === "wrong") emojis = ["😢", "💀", "👎", "😭", "❌"];
+    if (type === "wrong") emojis = [ "👎", "😭", "❌"];
 
     for (let i = 0; i < 20; i++) {
         const bubble = document.createElement("div");
