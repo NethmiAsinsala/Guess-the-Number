@@ -48,9 +48,9 @@ function createBubbles(type) {
 
     let emojis = [];
 
-    if (type === "normal") emojis = ["⚪", "🔵", "🟣", "🔮", "💠"];
-    if (type === "win") emojis = ["🎉", "😀", "🎈", "🥳", "🏆"];
-    if (type === "wrong") emojis = [ "👎", "😭", "❌"];
+    if (type === "normal") emojis = ["🔴", "🔵", "🟣", "🟠", "🟢"];
+    if (type === "win") emojis = ["🎉", "🥳", "🎉", "🥳", "🎉"];
+    if (type === "wrong") emojis = [ "❌", "❌", "❌","❌", "❌"];
 
     for (let i = 0; i < 20; i++) {
         const bubble = document.createElement("div");

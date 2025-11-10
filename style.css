@@ -11,6 +11,7 @@ body {
     font-family: "Orbitron", sans-serif;
     background: radial-gradient(circle, #0a0f1f, #01030a);
     color: #e0e6ff;
+    overflow: hidden;
 }
 
 /* Game UI container */
@@ -22,11 +23,13 @@ body {
     backdrop-filter: blur(12px);
     box-shadow: 0 0 25px rgba(0, 187, 255, 0.3);
     border: 2px solid rgba(0, 187, 255, 0.4);
+    width: 90%;
+    max-width: 600px;
 }
 
 /* Title */
 h2 {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 25px;
     color: #00eaff;
@@ -35,9 +38,10 @@ h2 {
 
 /* Input Field */
 input {
-    padding: 18px;
-    font-size: 26px;
-    width: 350px;
+    padding: 16px;
+    font-size: 1.3rem;
+    width: 80%;
+    max-width: 350px;
     border: 2px solid #00b7ff;
     border-radius: 12px;
     text-align: center;
@@ -57,8 +61,8 @@ input:focus {
 /* Button */
 button {
     margin-top: 18px;
-    padding: 14px 40px;
-    font-size: 28px;
+    padding: 12px 35px;
+    font-size: 1.4rem;
     font-weight: 700;
     border: none;
     border-radius: 12px;
@@ -81,13 +85,14 @@ button:active {
 
 /* Message */
 p {
-    font-size: 26px;
+    font-size: 1.3rem;
     margin-top: 25px;
     font-weight: 600;
     color: #ffdf4d;
     text-shadow: 0 0 6px rgba(255, 200, 0, 0.4);
 }
-/* bubble background */
+
+/* Bubble background */
 #bubbleArea {
     position: fixed;
     top: 0;
@@ -110,4 +115,56 @@ p {
     0% { transform: translateY(100vh) scale(1); opacity: 0; }
     20% { opacity: 1; }
     100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+/* 🌐 Responsive Design */
+
+/* Tablets (portrait and landscape) */
+@media (max-width: 992px) {
+    .container {
+        padding: 40px 50px;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    input {
+        font-size: 1.2rem;
+    }
+    button {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 30px 25px;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+    button {
+        font-size: 1.1rem;
+        padding: 10px 25px;
+    }
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 400px) {
+    h2 {
+        font-size: 1.7rem;
+    }
+    input, button, p {
+        font-size: 1rem;
+    }
 }
