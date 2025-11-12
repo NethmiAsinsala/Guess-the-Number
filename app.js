@@ -48,9 +48,9 @@ function createBubbles(type) {
 
     let emojis = [];
 
-    if (type === "normal") emojis = ["🔴", "🔵", "🟣", "🟠", "🟢"];
+    if (type === "normal") emojis = ["🔺", "🔵", "♦️", "🔶", "🟩","🎲"];
     if (type === "win") emojis = ["🎉", "🥳", "🎉", "🥳", "🎉"];
-    if (type === "wrong") emojis = [ "❌", "❌", "❌","❌", "❌"];
+    if (type === "wrong") emojis = [ "❌", "❌", "🥺","😧", "🥴"];
 
     for (let i = 0; i < 20; i++) {
         const bubble = document.createElement("div");
@@ -58,7 +58,7 @@ function createBubbles(type) {
         bubble.innerText = emojis[Math.floor(Math.random() * emojis.length)];
         bubble.style.left = Math.random() * 100 + "vw";
         bubble.style.animationDuration = (4 + Math.random() * 4) + "s";
-        bubble.style.fontSize = (20 + Math.random() * 20) + "px";
+        bubble.style.fontSize = (40 + Math.random() * 20) + "px";
         bubbleArea.appendChild(bubble);
     }
 
